@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div id="maincontainer"></div>
+    <script>
+        const id = "maincontainer";
+
+        function display_tag_h(tag, text) {
+            const h = document.createElement(tag);
+            h.appendChild(document.createTextNode(text));
+            document.getElementById(id).appendChild(h);
+        }
+
+        function button_date() {
+            const button = document.createElement('button');
+            const div = document.createElement('div');
+            div.appendChild(button);
+            div.style.height = "2vh";
+            button.style.cursor = "pointer";
+            let activate = false;
+            let worker;
+            button.onclick = function () {
+                activate = !activate;
+                if (activate) {
+                    worker = new Worker('worker.js');
+                    let bg_color = ["red", "green", "blue", "pink", "greenyellow", "aqua"];
+                    let bg_color_i = 0;
+                    worker.onmessage = function (e) {
+                        button.style = "position:fixed; right:0; top:0; border:solid black 0.15rem; color:white;";
+                        button.style.backgroundColor = bg_color[bg_color_i++];
+                        button.innerHTML = e.data;
+                        bg_color_i = bg_color_i % 6;
+                    }
+                }
+                else {
+                    worker.terminate();
+                    button.style.position = "static";
+                }
+            }
+
+            button.appendChild(document.createTextNode("Click me to display Date and Time."));
+            document.getElementById(id).appendChild(div);
+        }
+
+        function display_info() {
+            const infoList = ["Krit Tangpinyoputtikhun", "Subject: Web Application Development", "Semester: 2/2565"];
+            const style = document.createElement('style');
+            const div = document.createElement('div');
+            div.style.paddingTop = "2rem";
+            const a = document.createElement('a');
+            a.appendChild(document.createTextNode("Personal Info"));
+            a.style = "color:fuchsia; text-decoration:underline; cursor:pointer; width:fit-content;";
+            a.addEventListener("mouseover", function () {
+                this.style.color = "blue";
+                this.style.backgroundColor = "yellow";
+            });
+            a.addEventListener("mouseout", function () {
+                this.style.color = "fuchsia";
+                this.style.backgroundColor = "white";
+            });
+
+            const ul = document.createElement('ul');
+            ul.style.display = 'none';
+
+            for (let i in infoList) {
+                const li = document.createElement('li');
+                const span = document.createElement('span');
+                span.appendChild(document.createTextNode(infoList[i]));
+                li.appendChild(span);
+                ul.appendChild(li);
+            }
+
+            let activate = false;
+            a.onclick = function () {
+                activate = !activate;
+                if (activate) {
+                    ul.style.display = 'none';
+                } else {
+                    ul.style.display = 'block';
+                }
+            }
+
+            div.appendChild(a);
+            div.appendChild(ul);
+            document.getElementById(id).appendChild(div);
+        }
+
+        function display_snapshots() {
+            const ul = document.createElement('ul');
+            const div = document.createElement('div');
+            const snapList = [
+                { name: "Fireworks", img_src: "https://cdn.abcotvs.com/dip/images/3676649_shutterstock_281822831.jpg?w=1600" },
+                { name: "Crest",     img_src: "https://cdn2.vectorstock.com/i/1000x1000/39/36/premium-quality-product-golden-label-design-vector-20013936.jpg" },
+                { name: "Action",    img_src: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Marcus_Thames_Tigers_2007.jpg" },
+                { name: "Buffalo",   img_src: "https://i.natgeofe.com/n/de7be89d-3715-4e89-b83b-ab697ef781b8/thumbnail-cape-buffalo-nationalgeographic_1976203_3x2.jpg" }
+            ];
+            const img = document.createElement('img');
+            img.style.width = "500px";
+            img.src = "https://upload.wikimedia.org/wikipedia/commons/3/35/KMITL_PCC.png";
+            for (let i in snapList) {
+                const li = document.createElement('li');
+                const span = document.createElement('span');
+                span.appendChild(document.createTextNode(snapList[i].name));
+                span.style = "color:blue; text-decoration:underline; cursor:pointer;";
+                li.appendChild(span);
+                ul.appendChild(li);
+
+                li.onclick = function () {
+                    img.src = snapList[i].img_src;
+                }
+            }
+            div.appendChild(ul);
+            div.appendChild(img);
+            document.getElementById(id).appendChild(div);
+        }
+
+        display_tag_h('h2', "Exercise 04: Javascript&DOM");
+        button_date();
+        display_info();
+        display_tag_h('h1', "Snapshots");
+        display_snapshots();
+
+    </script>
+</body>
+
+</html>

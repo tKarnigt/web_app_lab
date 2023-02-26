@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Plus+Jakarta+Sans:wght@200;300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        :root {
+            --primary: #d6a577;
+            --primary-dark: #bd7657;
+            --primary-dark-2: #5b3b28;
+            --black: #010101;
+            --gray-1: #788190;
+            --gray-2: #d3d4db;
+            --white: #FFFFFF;
+            --body: #fefefe;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--body);
+        }
+
+        .btn {
+            border-radius: 8px;
+        }
+        .btn-primary,
+        .btn-outline-secondary {
+            padding: 12px 20px;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        .btn-outline-secondary {
+            border: 1px solid var(--gray-2);
+            color: var(--black);
+        }
+        .btn-outline-secondary:hover,
+        .btn-outline-secondary:focus {
+            background-color: var(--gray-2);
+            border: 1px solid var(--gray-2);
+            color: var(--black);
+        }
+
+        .navbar-brand{
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .navbar .btn-outline-secondary {
+            border: 1px solid var(--gray-2);
+            color: var(--black);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            padding: 10px 16px;
+        }
+        .navbar {
+            padding: 32px 0;
+        }
+        .nav-item {
+            margin-left: 41px;
+            font-size: 16px;
+            color: var(--gray-1);
+        }
+        .navbar-nav .nav-link.active {
+            font-weight: bold;
+            color: var(--black);
+        }
+
+        section.hero {
+            padding: 80px 0;
+        }
+        section.hero .text {
+            font-weight: 800;
+            font-size: 48px;
+            line-height: 73px;
+            color: var(--black);
+        }
+        .buttons {
+            padding-top: 69px;
+        }
+        .buttons .btn {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 24px;
+        }
+
+        section.setup{
+            padding: 287px 0;
+        }
+        section.setup .text-header h3{
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 48px;
+            color: var(--black);
+        }
+        section.setup .text-header p{
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+            color: var(--gray-1);
+            padding: 27px 0;
+        }
+        section.setup .icons {
+            padding: 27ps 0;
+        }
+        section.setup h5{
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 24px;
+            color: var(--black);
+            padding-bottom: 18px;
+        }
+        section.setup .desc p{
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 22px;
+            color: var(--gray-1);
+            max-width: 284px;
+            margin: 0 auto;
+        }
+        section.setup .icons i{
+            font-size: 40px;
+            color: #262626;
+            margin-bottom: 10px;
+        }
+        section.setup .items .col-md{
+            padding: 25px;
+            margin-left: 10px;
+            border: 1px solid var(--gray-1);
+            margin-bottom: 10px;
+        }
+
+        section.information .text-information{
+            padding: 134px 0;
+        }
+        section.information h5{
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 48px;
+            color: var(--black);
+        }
+        section.information p{
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 28px;
+            color: var(--gray-1);
+            padding-top: 20px;
+        }
+        section.text-information .info-1{
+            padding: 183px 0;
+        }
+
+        footer{
+            padding-top: 279px;
+            margin-bottom: 44px;
+        }
+        footer a{
+            font-weight: bold;
+            font-size: 14px;
+            color: var(--black);
+            line-height: 18px;
+        }
+        footer .copy{
+            margin-top: 32px;
+            font-size: 14px;
+            color: var(--gray-1);
+            line-height: 17px;
+            font-weight: 400;
+        }
+
+        @media (max-width: 576px){
+            section.hero, section.setup, section.information{
+                text-align: center;
+            }
+
+            .navbar{
+                padding: 20px 0;
+            }
+            .nav-item{
+                margin-left: 0;
+            }
+            
+            section.hero img{
+                padding-top: 2.5rem;
+            }
+            section.hero .text{
+                font-weight: 800;
+                font-size: 38px;
+                line-height: 53px;
+            }
+            .buttons .btn{
+                display: block;
+                margin: 1rem 0;
+            }
+            .buttons .ms-3{
+                margin-left: 0 !important;
+            }
+
+            section.setup{
+                padding: 50px 0;
+            }
+
+            footer{
+                padding-top: 50px;
+                margin-bottom: 44px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <span class="material-symbols-outlined" style="color:#d6a577">pets</span>
+                Animals
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Types
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#dog">Dog</a></li>
+                            <li><a class="dropdown-item" href="#cat">Cat</a></li>
+                            <li><a class="dropdown-item" href="#bird">Bird</a></li>
+                            <li><a class="dropdown-item" href="#squirrel">Squirrel</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-secondary shadow-sm d-sm d-block" href="https://www.facebook.com/">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="text">
+                        The most popular pet in world!
+                    </div>
+                    <div class="buttons">
+                        <a href="#about" class="btn btn-primary" style="border:var(--primary-dark-2) solid 1px">Learn More</a>
+                        <a href="https://www.facebook.com/" class="btn btn-outline-secondary ms-3">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://cn.i.cdn.ti-platform.com/content/2222/dc-league-of-super-pets/showpage/za/dc-pets-showsquare-min.420ff83b.png" alt="hero-img" class="w-100">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="setup" id="about">
+        <div class="container">
+            <div class="text-header text-center">
+                <h3>About Us</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+            </div>
+            <div class="items text-center">
+                <div class="row">
+                    <a href="#dog" class="col-md" style="text-decoration:none;">
+                        <div class="icons">
+                            <i class="fa-solid fa-dog"></i>
+                        </div>
+                        <div class="desc">
+                            <h5>Dog</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, et suscipit distinctio sint consectetur dolorem vero laborum obcaecati quae quibusdam!</p>
+                        </div>
+                    </a>
+
+                    <a href="#cat" class="col-md" style="text-decoration:none;">
+                        <div class="icons">
+                            <i class="fa-solid fa-cat"></i>
+                        </div>
+                        <div class="desc">
+                            <h5>Cat</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, et suscipit distinctio sint consectetur dolorem vero laborum obcaecati quae quibusdam!</p>
+                        </div>
+                    </a>
+
+                    <a href="#bird" class="col-md" style="text-decoration:none;">
+                        <div class="icons">
+                            <i class="fa-solid fa-dove"></i>
+                        </div>
+                        <div class="desc">
+                            <h5>Bird</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, et suscipit distinctio sint consectetur dolorem vero laborum obcaecati quae quibusdam!</p>
+                        </div>
+                    </a>
+
+                    <a href="#squirrel" class="col-md" style="text-decoration:none;">
+                        <div class="icons">
+                            <i class="fa-solid fa-otter"></i>
+                        </div>
+                        <div class="desc">
+                            <h5>Squirrel</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, et suscipit distinctio sint consectetur dolorem vero laborum obcaecati quae quibusdam!</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="information">
+        <div class="container">
+            <div class="row info-1">
+                <div class="col-md-6 order-md-1">
+                    <img src="https://www.freepnglogos.com/uploads/dog-png/dog-png-cute-puppies-images-clkerm-vector-clip-2.png" alt="dog-img" class="w-100">
+                </div>
+                <div class="col-md-6">
+                    <div class="text-information">
+                        <h5 id="dog">Dog</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, praesentium error. Laboriosam eligendi cumque deserunt exercitationem. Quae deleniti officia adipisci.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row info-2">
+                <div class="col-md-6 ">
+                    <img src="https://freepngimg.com/save/160926-little-kitten-download-free-image/636x472" alt="cat-img" class="w-100">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <div class="text-information">
+                        <h5 id="cat">Cat</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, praesentium error. Laboriosam eligendi cumque deserunt exercitationem. Quae deleniti officia adipisci.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row info-3">
+                <div class="col-md-6 order-md-1">
+                    <img src="https://zupreem.com/wp-content/uploads/2021/01/bird-food-discount-1-1024x704.png" alt="cat-img" class="w-100">
+                </div>
+                <div class="col-md-6">
+                    <div class="text-information">
+                        <h5 id="bird">Bird</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, praesentium error. Laboriosam eligendi cumque deserunt exercitationem. Quae deleniti officia adipisci.</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row info-4">
+                <div class="col-md-6">
+                    <img src="https://www.pngplay.com/wp-content/uploads/2/Squirrel-PNG-Photo-Image.png" alt="squirrel-img" class="w-100">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <div class="text-information">
+                        <h5 id="squirrel">Squirrel</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, praesentium error. Laboriosam eligendi cumque deserunt exercitationem. Quae deleniti officia adipisci.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row row-cols-1 rows-cols-lg-5 g-2 g-lg-3">
+                        <div class="col-md-3">
+                            <div>
+                                <small>
+                                    <a href="#home" class="text-decoration-none">Home</a>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div>
+                                <small>
+                                    <a href="#about" class="text-decoration-none">About</a>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div>
+                                <small>
+                                    <a href="https://www.facebook.com/" class="text-decoration-none">Contact</a>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copy">
+                        Develop By &copy; 64010022 Krit Tangpinyoputtikhun
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
